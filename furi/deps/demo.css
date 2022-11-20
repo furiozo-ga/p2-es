@@ -1,0 +1,33 @@
+*{
+    background: #222;
+    color: bisque;
+}
+
+html,body {
+    margin:0;
+    padding:0;
+    width:100%;
+    height:100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+}
+
+input{
+  border: 1px dashed #db6;
+  background: #444;
+}
+
+button{
+  border: 1px outset #ca5;
+  background: #454;
+}
+
+button:active{
+  border-style: inset;
+}
+
+.feControls {
+  padding: 15px;
+  text-align: right;
+}

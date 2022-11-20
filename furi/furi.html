@@ -1,0 +1,43 @@
+<!DOCTYPE html><html><head>
+    <title>Kinematic body demo - p2.js physics engine</title>
+    <link href="deps/demo.css" rel="stylesheet" />
+    <meta name="description" content="Demonstrates kinematic bodies." />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+</head><body>
+
+<script type="module" defer>
+
+import * as fu from './deps/futils-web.mjs'
+import * as p2 from '../dist/p2-es.js'
+import { Demo } from './deps/fDemo.js'
+import { default as scene1 } from './scene1.mjs'
+import keyControls from './keyControls.mjs'
+import feControls from './feControls.mjs'
+
+// Create demo application
+let app=new Demo({scene1:{setup:scene1}})
+app.elementContainer.lastChild.remove()
+app.settings.fullscreen=function() {
+    if (document.fullscreenElement) {
+        document.exitFullscreen();
+        return
+    }
+    
+    document.documentElement.requestFullscreen().catch(l)
+}
+
+// app.gui.hide()
+dispatchEvent(new KeyboardEvent('keydown',{keyCode:72}))
+
+app.keyControls=new keyControls(app)
+
+let div=document.createElement('div')
+let fec= app.fec = new feControls(app,div)
+app.elementContainer.parentElement.append(div)
+
+fec.takectrl()
+
+</script>
+
+</body></html>

@@ -1,0 +1,1 @@
+globalThis.l=console.log
